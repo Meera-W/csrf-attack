@@ -20,7 +20,7 @@ function check_remember_me($con)
 function check_login($con)
 {
 
-
+//	if(isset($_SESSION['user_id']))
 	if(isset($_COOKIE['idOfUser']) && isset($_COOKIE['emailOfUser']) && isset($_COOKIE['password'])||isset($_COOKIE['rememberme'])||isset($_COOKIE['withoutrememberme']))
 	{
 
@@ -85,6 +85,27 @@ function printTable($con)
 	} else {
 	echo "0 results";
 	}
+	die;
+}
+
+function getPrice($con, $source, $destination){
+
+if (!$con) {
+	die("Connection failed: " . mysqli_connect_error());
+	}
+
+	//$email = $_COOKIE['emailOfUser'];
+
+	$sql = "select * from train where source = '$source' and destination = '$destination'";
+	$result = mysqli_query($con, $sql);
+
+	if (mysqli_num_rows($result) > 0) {
+	$price_of_one = mysqli_fetch_assoc($result);
+	return $price_of_one;
+	}
+
+	else{
+	header("Location: login.php");
 	die;
 }
 

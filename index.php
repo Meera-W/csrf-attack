@@ -16,10 +16,13 @@ return; }
 else{
 
 
+
+
 		$source = $_POST['source'];
 		$destination = $_POST['destination'];
 		$no_of_tickets = $_POST['no_of_tickets'];
 		$email = $_POST['email'];
+		
 	
 		
 		// Remove white spaces at tails
@@ -28,6 +31,11 @@ else{
 		$no_of_tickets = trim($no_of_tickets);
 		$email = trim($email);
 		
+		
+		$emailcookie = $_COOKIE['emailOfUser'];
+		$query = "UPDATE users SET balance=balance-200 where email = '$emailcookie'";
+	        mysqli_query($con, $query);
+	 	
 		
 		if(!empty($source))
 		{
@@ -49,10 +57,9 @@ else{
 				        $res_id = random_num(20);
 					$query = "insert into ticket(res_id, source, destination, no_of_tickets, email, price_of_one, total_price) values ('$res_id','$source','$destination','$no_of_tickets','$email',500,'$total_price')";
 					mysqli_query($con, $query);
-					$email = $_COOKIE['emailOfUser'];
+					//$email = $_COOKIE['emailOfUser'];
 	//deduction of maintenance charge
-	$query = "UPDATE users SET balance=balance-200 where email = '$email'";
-	mysqli_query($con, $query);
+	
 			
 			}
 			
@@ -61,8 +68,8 @@ else{
 		{
 			echo '<script>alert("Please enter some valid information!")</script>';
 		}
-	
-}
+	}
+
 	
 ?>
 

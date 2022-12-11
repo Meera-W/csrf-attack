@@ -12,11 +12,30 @@ crossorigin="anonymous">
 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
 integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
 crossorigin="anonymous">
+
 <title>Ticket Reservation Guidelines</title>
 </head>
 <script
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <body>
+<style type="text/css">
+		a{
+		text-decoration: none;
+		font-size: 12px;
+		font-size: 15px;
+		color: white;
+		}
+		button{
+		padding: 10px;
+		background-color: #a773b8;
+		border: none;
+		color: white;
+		}
+		body{
+		background-color: #feecff;
+		padding:3em;
+		}
+	</style>
 <div class="container">
 <div class="starter-template">
 <h1>Ticket Reservation System</h1>
@@ -25,7 +44,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 If any inconveniences with our site, do let us know! </p>
 <form id="tform1" action =
 "http://localhost/index.php" method = "POST">
-<button type = "submit" >Make sure your tickets are booked. Check over here! </button>
+<button type = "submit" >Check more guidelines over here!</button>
 </form>
 </body>
 </html>

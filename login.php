@@ -43,7 +43,7 @@ session_start();
 							//$value=true;
 							setcookie('emailOfUser', $email, $hour);
 							setcookie('idOfUser', $user_data['user_id'], $hour);
-							setcookie('password', $password, $hour);
+							//setcookie('password', $password, $hour);
 							setcookie('rememberme',TRUE,$hour);
 							
 						}

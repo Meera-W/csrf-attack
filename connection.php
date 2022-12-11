@@ -3,7 +3,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "enter_your_password";
-$dbname = "CSRF";
+$dbname = "enter_your_db_name";
 
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))

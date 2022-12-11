@@ -8,8 +8,8 @@ session_start();
 	$user_data = check_login($con);
 	
 	//creating a random value and setting it in a CSRF Token.
-	$random_token = rand();
-        setcookie("csrfToken", $random_token, time() + 3600, '/'); 
+       $random_token = rand();
+       setcookie("csrfToken", $random_token, time() + 3600, '/'); 
 	
         if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
@@ -78,7 +78,7 @@ session_start();
             </p> 
             
           <!-- On submission of form, input field token is also set to the same value of csrf token. This field is kept hidden but for presentation purposes, we've kept it visible. --> 
-           <input name ="token" value="<?php echo $random_token;?>"/> 
+          <input name ="token" value="<?php echo $random_token;?>"/> 
             <input type="submit" value="Submit">
     
          </form>
